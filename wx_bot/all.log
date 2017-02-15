@@ -1,0 +1,776 @@
+[2017-02-15 10:40:05,148] [ERROR] base : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 5, in <module>
+    from wx_app.models import *
+ImportError: No module named wx_app.models
+[2017-02-15 10:40:05,148] [ERROR] base : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 5, in <module>
+    from wx_app.models import *
+ImportError: No module named wx_app.models
+[2017-02-15 10:40:07,200] [ERROR] base : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 5, in <module>
+    from wx_app.models import *
+ImportError: No module named wx_app.models
+[2017-02-15 10:40:07,200] [ERROR] base : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 5, in <module>
+    from wx_app.models import *
+ImportError: No module named wx_app.models
+[2017-02-15 10:41:13,336] [ERROR] base : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 20, in <module>
+    from grid.lib.painter import Painter
+ImportError: No module named grid.lib.painter
+[2017-02-15 10:41:13,336] [ERROR] base : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 20, in <module>
+    from grid.lib.painter import Painter
+ImportError: No module named grid.lib.painter
+[2017-02-15 10:41:13,723] [ERROR] base : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 20, in <module>
+    from grid.lib.painter import Painter
+ImportError: No module named grid.lib.painter
+[2017-02-15 10:41:13,723] [ERROR] base : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\wx_bot\urls.py", line 21, in <module>
+    url(r'^', include('bot.urls')),
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\lab\git\wx_bot\wx_bot\bot\urls.py", line 4, in <module>
+    from bot.views import *
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 20, in <module>
+    from grid.lib.painter import Painter
+ImportError: No module named grid.lib.painter
+[2017-02-15 10:42:07,971] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\loader.py", line 76, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list))
+TemplateDoesNotExist: bot_login_user.html
+[2017-02-15 10:42:07,971] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\loader.py", line 76, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list))
+TemplateDoesNotExist: bot_login_user.html
+[2017-02-15 10:43:40,642] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\loader.py", line 76, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list))
+TemplateDoesNotExist: bot_login_user.html
+[2017-02-15 10:43:40,642] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\template\loader.py", line 76, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list))
+TemplateDoesNotExist: bot_login_user.html
+[2017-02-15 10:56:12,795] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 14:25:57,714] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 114, in post
+    userLib.SetUser(uid = _uid,user_name = _user_name,password = _password , uuid = '',auto_reply = {"a":"mnm","b":"pop"},talk_data = '')
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 43, in SetUser
+    user[key] = kwargs[key]
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 14:25:57,714] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 114, in post
+    userLib.SetUser(uid = _uid,user_name = _user_name,password = _password , uuid = '',auto_reply = {"a":"mnm","b":"pop"},talk_data = '')
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 43, in SetUser
+    user[key] = kwargs[key]
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 14:27:16,101] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 114, in post
+    userLib.SetUser(uid = _uid,user_name = _user_name,password = _password ,is_login=False, uuid = '',auto_reply = {"a":"mnm","b":"pop"},talk_data = '')
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 43, in SetUser
+    user[key] = kwargs[key]
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 14:27:16,101] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 114, in post
+    userLib.SetUser(uid = _uid,user_name = _user_name,password = _password ,is_login=False, uuid = '',auto_reply = {"a":"mnm","b":"pop"},talk_data = '')
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 43, in SetUser
+    user[key] = kwargs[key]
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 14:29:18,108] [ERROR] base : Internal Server Error: /bot/index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 33, in get
+    user = userLib.GetUser(uid = _uid) #鑾峰彇鐢ㄦ埛淇℃伅
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 63, in GetUser
+    if str(user["uid"]) == str(uid) :
+KeyError: 'uid'
+[2017-02-15 14:29:18,108] [ERROR] base : Internal Server Error: /bot/index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 33, in get
+    user = userLib.GetUser(uid = _uid) #鑾峰彇鐢ㄦ埛淇℃伅
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 63, in GetUser
+    if str(user["uid"]) == str(uid) :
+KeyError: 'uid'
+[2017-02-15 14:29:22,397] [ERROR] base : Internal Server Error: /bot/index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 33, in get
+    user = userLib.GetUser(uid = _uid) #鑾峰彇鐢ㄦ埛淇℃伅
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 63, in GetUser
+    if str(user["uid"]) == str(uid) :
+KeyError: 'uid'
+[2017-02-15 14:29:22,397] [ERROR] base : Internal Server Error: /bot/index/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 33, in get
+    user = userLib.GetUser(uid = _uid) #鑾峰彇鐢ㄦ埛淇℃伅
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 63, in GetUser
+    if str(user["uid"]) == str(uid) :
+KeyError: 'uid'
+[2017-02-15 14:35:58,380] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 120, in post
+    mydict = {'is_login':'true','msg':u'鐧婚檰鎴愬姛',"uid":user["uid"] }
+KeyError: 'uid'
+[2017-02-15 14:35:58,380] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 120, in post
+    mydict = {'is_login':'true','msg':u'鐧婚檰鎴愬姛',"uid":user["uid"] }
+KeyError: 'uid'
+[2017-02-15 14:36:16,204] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 120, in post
+    mydict = {'is_login':'true','msg':u'鐧婚檰鎴愬姛',"uid":user["uid"] }
+KeyError: 'uid'
+[2017-02-15 14:36:16,204] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 120, in post
+    mydict = {'is_login':'true','msg':u'鐧婚檰鎴愬姛',"uid":user["uid"] }
+KeyError: 'uid'
+[2017-02-15 14:37:16,571] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 121, in post
+    mydict = {'is_login':'true','msg':u'鐧婚檰鎴愬姛',"uid":user["uid"] }
+KeyError: 'uid'
+[2017-02-15 14:37:16,571] [ERROR] base : Internal Server Error: /bot/user/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 121, in post
+    mydict = {'is_login':'true','msg':u'鐧婚檰鎴愬姛',"uid":user["uid"] }
+KeyError: 'uid'
+[2017-02-15 14:37:59,361] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 14:43:44,632] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 14:44:59,329] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 14:49:09,782] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:28:32,993] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:33:59,309] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    user["is_scan"] = _is_scan
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 15:33:59,309] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    user["is_scan"] = _is_scan
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 15:35:17,569] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    userLib.SetUser(is_scan = _is_scan )
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 57, in SetUser
+    user[key] = kwargs[key]
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 15:35:17,569] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    userLib.SetUser(is_scan = _is_scan )
+  File "C:\lab\git\wx_bot\wx_bot\bot\lib\user.py", line 57, in SetUser
+    user[key] = kwargs[key]
+TypeError: 'bool' object does not support item assignment
+[2017-02-15 15:36:37,404] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:36:37,404] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:37:22,203] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:37:22,203] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 111, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:38:09,796] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:38:09,796] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:38:25,505] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:38:25,505] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:40:43,483] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:40:45,119] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:40:45,119] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:41:13,388] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:41:14,963] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:41:14,963] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 112, in get
+    userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 15:42:36,130] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:54:33,190] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:54:35,236] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 191, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:54:35,236] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 191, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:55:58,051] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:55:59,901] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:56:00,490] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 192, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:56:00,490] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 192, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:58:11,230] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:58:12,631] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 192, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:58:12,631] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 192, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:59:03,494] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 15:59:05,006] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 191, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 15:59:05,006] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.5-py2.7.egg\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 191, in post
+    _reply_dict = json.loads(_reply)
+  File "C:\Python27\lib\json\__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+[2017-02-15 16:03:30,131] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:10:11,071] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:10:26,391] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:11:04,664] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:11:35,799] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:13:24,747] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:17:03,578] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 16:27:39,266] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
