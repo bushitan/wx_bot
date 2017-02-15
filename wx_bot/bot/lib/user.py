@@ -38,21 +38,27 @@ class User(object):
 	}]
 
 	#增加用户信息
-	def AddUser(self,uid = None,*args, **kwargs):
-		user = self.GetUser(uid = uid)
-		if user :
-			return False
+	def AddUser(self,uid = "",*args, **kwargs):
+		# user = self.GetUser(uid = uid)
+		# if user :
+		# 	return False
 		user = {
 			"uid":uid,
+			"user_name":"",
+			"password":"",
+			"is_login":False,
 			"is_scan":0,
+			"uuid":"",
+			"auto_reply":{"1":"123","2":"wqe"},
+			"talk_data":"",
 		}
 		for key in kwargs:
 			user[key] = kwargs[key]
 		self.USER_INFO .append(user)
 
 	#设置用户信息
-	def SetUser(self,uid = None,*args, **kwargs):
-		user = self.GetUser(uid = uid)
+	def SetUser(self,uuid = "",*args, **kwargs):
+		user = self.GetUser(uuid = uuid)
 		for key in kwargs:
 			user[key] = kwargs[key]
 

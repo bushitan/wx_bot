@@ -774,3 +774,83 @@ ValueError: No JSON object could be decoded
 [2017-02-15 16:13:24,747] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
 [2017-02-15 16:17:03,578] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
 [2017-02-15 16:27:39,266] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 19:58:28,519] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 21:05:16,509] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 21:05:39,046] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 21:05:40,055] [ERROR] base : Internal Server Error: /bot/index/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 69, in get
+    return super(BotIndex, self).get(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 74, in get_context_data
+    context['auto_reply'] = self.auto_reply
+AttributeError: 'BotIndex' object has no attribute 'auto_reply'
+[2017-02-15 21:05:40,055] [ERROR] base : Internal Server Error: /bot/index/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 69, in get
+    return super(BotIndex, self).get(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 74, in get_context_data
+    context['auto_reply'] = self.auto_reply
+AttributeError: 'BotIndex' object has no attribute 'auto_reply'
+[2017-02-15 21:06:12,039] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-15 21:06:13,927] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 192, in get
+    mydict = {"auto_reply":user["auto_reply"]}
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 21:06:13,927] [ERROR] base : Internal Server Error: /bot/reply/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 192, in get
+    mydict = {"auto_reply":user["auto_reply"]}
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 21:06:13,934] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 145, in post
+    if user["is_scan"] == QR_IS_SCAN :
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-15 21:06:13,934] [ERROR] base : Internal Server Error: /bot/qr/status/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\lab\git\wx_bot\wx_bot\bot\views.py", line 145, in post
+    if user["is_scan"] == QR_IS_SCAN :
+TypeError: 'bool' object has no attribute '__getitem__'
+[2017-02-16 00:50:33,630] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com
+[2017-02-16 00:55:41,167] [INFO] connectionpool : Starting new HTTPS connection (1): login.weixin.qq.com

@@ -30,35 +30,50 @@ class BotIndex(ListView):
     def get(self, request, *args, **kwargs):
 
         _uid = request.GET.get("uid", "")
-        print _uid
-        user = userLib.GetUser(uid = _uid) #获取用户信息
-        print user
+        uuid = userLib.Get_QRuuid() #获取uuid
+        userLib.AddUser(uid=_uid,uuid=uuid) #创建用户
+        self.uuid = uuid
+        self.qr_url = userLib.Get_QRurl( uuid =uuid) #获取二维码链接
+        _cmd = u'python '+ BOT_RUN_FILE_PATH + "  " + uuid + "  " + SETTING.BASE_HOST #运行脚本
+        # print _cmd
+        subprocess.Popen(_cmd, shell=True) #启动项目
+        return super(BotIndex, self).get(request, *args, **kwargs)
 
-        if user : #已登录
-            uuid = userLib.Get_QRuuid() #获取uuid
-            self.uuid = uuid
-            user["uuid"] = uuid #用户同步uuid
-            userLib.SetUser(uid = user["uid"], uuid=uuid) #获取二维码链接
-            self.auto_reply = user["auto_reply"] #准备将回复模板传到前端
-            self.qr_url = userLib.Get_QRurl( uuid =uuid) #获取二维码链接
-            _cmd = u'python '+ BOT_RUN_FILE_PATH + "  " + uuid + "  " + SETTING.BASE_HOST #运行脚本
-            print _cmd
-            subprocess.Popen(_cmd, shell=True) #启动项目
-        else:#未登录情况
-            mydict = {"msg":u"用户未登录"}
-            return HttpResponse(
-                json.dumps(mydict),
-                content_type="application/json"
-            )
+        # mydict = {"msg":u"用户未登录"}
+        # return HttpResponse(
+        #     json.dumps(mydict),
+        #     content_type="application/json"
+        # )
+
+        # _uid = request.GET.get("uid", "")
+        # print _uid
+        # user = userLib.GetUser(uid = _uid) #获取用户信息
+        # print user
+        #
+        # if user : #已登录
+        #     uuid = userLib.Get_QRuuid() #获取uuid
+        #     self.uuid = uuid
+        #     user["uuid"] = uuid #用户同步uuid
+        #     userLib.SetUser(uid = user["uid"], uuid=uuid) #获取二维码链接
+        #     self.auto_reply = user["auto_reply"] #准备将回复模板传到前端
+        #     self.qr_url = userLib.Get_QRurl( uuid =uuid) #获取二维码链接
+        #     _cmd = u'python '+ BOT_RUN_FILE_PATH + "  " + uuid + "  " + SETTING.BASE_HOST #运行脚本
+        #     print _cmd
+        #     subprocess.Popen(_cmd, shell=True) #启动项目
+        # else:#未登录情况
+        #     mydict = {"msg":u"用户未登录"}
+        #     return HttpResponse(
+        #         json.dumps(mydict),
+        #         content_type="application/json"
+        #     )
             # self.uuid = 123
             # self.auto_reply = None
             # pass
-        return super(BotIndex, self).get(request, *args, **kwargs)
     def get_context_data(self, **kwargs):
         context =super(BotIndex, self).get_context_data(**kwargs)
         context['qr_url'] = self.qr_url
         context['uuid'] = self.uuid
-        context['auto_reply'] = self.auto_reply
+        # context['auto_reply'] = self.auto_reply
         return context
     def get_queryset(self):
         pass
@@ -110,9 +125,9 @@ class QRStatus(ListView):
         _is_scan =  request.GET.get("is_scan", "")
         _user_name =  request.GET.get("user_name", "")
 
-        user = userLib.GetUser( uuid = _uuid)
-        print user,_uuid
-        userLib.SetUser(uid = user["uid"],is_scan = _is_scan )
+        # user = userLib.GetUser( uuid = _uuid)
+        # print user,_uuid
+        userLib.SetUser(uuid = _uuid,is_scan = _is_scan )
         # user["is_scan"] = _is_scan
         # print 123,uuid,is_login,user_name
         mydict = {"msg":"scan ok"}
@@ -185,13 +200,13 @@ class Reply(ListView):
 
     def post(self, request, *args, **kwargs):
         _uuid = request.POST.get("uuid", "")
-        user = userLib.GetUser( uuid = _uuid)
+        # user = userLib.GetUser( uuid = _uuid)
         _reply = request.POST.get("reply", "")
         # print _reply
         _reply_dict = json.loads(_reply)
         # print _reply_dict
         # print user
-        userLib.SetUser(uid = user["uid"],auto_reply=_reply_dict)
+        userLib.SetUser(uuid = _uuid,auto_reply=_reply_dict)
         print userLib.GetUser( uuid = _uuid)
         # user["auto_reply"] = _reply_dict  #直接更改user_reply 的key
         mydict = {"msg":u"回复模板设置成功"}
