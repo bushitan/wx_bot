@@ -70,8 +70,8 @@ def login(self, enableCmdQR=False, picDir=None, qrCallback=None,
             status = self.check_login()
             print status
             # print "qrCallback",qrCallback
-            # if hasattr(qrCallback, '__call__'):
-            #     qrCallback(uuid=self.uuid, status=status, qrcode=qrStorage.getvalue())
+            if hasattr(qrCallback, '__call__'):
+                qrCallback(uuid=self.uuid, status=status)
             if status == '200':
                 isLoggedIn = True
             elif status == '201':
@@ -83,13 +83,13 @@ def login(self, enableCmdQR=False, picDir=None, qrCallback=None,
         if isLoggedIn: break
         logger.info('Log in time out, reloading QR code')
         print '111 Log in time out'
-        r = loginCallback( isLogin = 2,userName=self.storageClass.userName) # time out
+        # r = loginCallback( isLogin = 2,userName=self.storageClass.userName) # time out
         sys.exit()
     self.web_init()
     self.show_mobile_login()
     self.get_contact(True)
     if hasattr(loginCallback, '__call__'):
-        r = loginCallback( isLogin = 1,userName=self.storageClass.userName) # login success
+        r = loginCallback(uuid=self.uuid, userName=self.storageClass.userName,nickName =self.storageClass.nickName ) # login success
     else:
         utils.clear_screen()
         if os.path.exists(picDir or config.DEFAULT_QR):
@@ -234,7 +234,7 @@ def start_receiving(self, exitCallback=None, receiveCallback = None, getReceivin
         while self.alive:
             try:
                 if hasattr(receiveCallback, '__call__'):
-                    receiveCallback()
+                    receiveCallback(uuid=self.uuid)
 
                 i = sync_check(self)
                 if i is None:
@@ -266,7 +266,7 @@ def start_receiving(self, exitCallback=None, receiveCallback = None, getReceivin
                     time.sleep(1)
         self.logout()
         if hasattr(exitCallback, '__call__'):
-            exitCallback()
+            exitCallback(uuid=self.uuid)
         else:
             logger.info('LOG OUT!')
     if getReceivingFnOnly:

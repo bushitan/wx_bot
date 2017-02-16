@@ -113,17 +113,21 @@ class UserLogin(ListView):
         )
 import time
 #查询二维码是否扫描，若已经扫描，则登陆成功
-# 0 未扫描  ，1 已扫描 ，2 超时
+# 0 未扫描  ，1 已扫描 ，2 超时 , 3登陆 ， 4退出
 QR_WATER_SCAN = '0'
 QR_IS_SCAN = '1'
-QR_TIME_OUT = '2'
+QR_WATER_LOGIN = '2'
+QR_TIME_OUT = '3'
+QR_LOGIN = '4'
+QR_EXIT = '5'
 class QRStatus(ListView):
     #bot线程，更改is_scan状态
     def get(self, request, *args, **kwargs):
 
         _uuid = request.GET.get("uuid", "")
         _is_scan =  request.GET.get("is_scan", "")
-        _user_name =  request.GET.get("user_name", "")
+        print 'view QR:',_uuid,_is_scan
+        # _user_name =  request.GET.get("user_name", "")
 
         # user = userLib.GetUser( uuid = _uuid)
         # print user,_uuid
@@ -144,14 +148,17 @@ class QRStatus(ListView):
         step = 0
         while step<50:
             # print "step:",step
-            if user["is_scan"] == QR_IS_SCAN :
-                mydict = {'qr_status':QR_IS_SCAN, 'msg':u'已扫描，登陆成功'}
-                return HttpResponse(
-                    json.dumps(mydict),
-                    content_type="application/json"
-                )
-            if user["is_scan"] == QR_TIME_OUT:
-                mydict = {'qr_status':QR_TIME_OUT, 'msg':u'二维码超时，请重新登录'}
+            if user["is_scan"] != QR_WATER_SCAN :
+                if user["is_scan"] == QR_IS_SCAN :
+                    mydict = {'qr_status':QR_IS_SCAN, 'msg':u'已扫描'}
+                if user["is_scan"] == QR_WATER_LOGIN :
+                    mydict = {'qr_status':QR_WATER_LOGIN, 'msg':u'已扫描，请在微信确认'}
+                if user["is_scan"] == QR_TIME_OUT:
+                    mydict = {'qr_status':QR_TIME_OUT, 'msg':u'确认超时，请重新登录'}
+                if user["is_scan"] == QR_LOGIN :
+                    mydict = {'qr_status':QR_LOGIN, 'msg':u'登陆成功'}
+                if user["is_scan"] == QR_EXIT:
+                    mydict = {'qr_status':QR_EXIT, 'msg':u'已退出'}
                 return HttpResponse(
                     json.dumps(mydict),
                     content_type="application/json"

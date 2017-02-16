@@ -19,26 +19,26 @@
     </div>
     <div class="bot_info">
         <ul>
-            <li>
-                <span>添加好友回复</span>
-                <span>
-                    <input type="text">
-                </span>
-            </li>
+{#            <li>#}
+{#                <span>添加好友回复</span>#}
+{#                <span>#}
+{#                    <input type="text">#}
+{#                </span>#}
+{#            </li>#}
             <li>
                 <div  id="reply_key">
                     <span>关键词回复1</span>
                 </div>
             </li>
-            <li>
-                <span>关键词回复2</span>
-                <span>
-                    <input type="text" id="key2" value="{{key2}}"  />
-                </span>
-                <span>
-                    <input type="text" id="value2" value="{{value2}}"  />
-                </span>
-            </li>
+{#            <li>#}
+{#                <span>关键词回复2</span>#}
+{#                <span>#}
+{#                    <input type="text" id="key2" value="{{key2}}"  />#}
+{#                </span>#}
+{#                <span>#}
+{#                    <input type="text" id="value2" value="{{value2}}"  />#}
+{#                </span>#}
+{#            </li>#}
         </ul>
          <input type="button" value="设置回复" id="set_reply" />
     </div>
@@ -107,6 +107,10 @@
         var _reply_obj = {}
         _reply_obj[$('#key1').val()] = $('#value1').val()
         _reply_obj[$('#key2').val()] = $('#value2').val()
+        _reply_obj[$('#key3').val()] = $('#value3').val()
+        _reply_obj[$('#key4').val()] = $('#value4').val()
+        _reply_obj[$('#key5').val()] = $('#value5').val()
+        _reply_obj[$('#key6').val()] = $('#value6').val()
         console.log(_reply_obj)
 
         var _json = JSON.stringify(_reply_obj)

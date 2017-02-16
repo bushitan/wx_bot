@@ -47,9 +47,16 @@ class User(object):
 			"user_name":"",
 			"password":"",
 			"is_login":False,
-			"is_scan":0,
+			"is_scan":'0',
 			"uuid":"",
-			"auto_reply":{"1":"123","2":"wqe"},
+			"auto_reply":{
+				"1":"123",
+				"2":"wqe",
+				"3":"r4r",
+				"4":"op0",
+				"5":"nm1",
+				"6":"5p;",
+			},
 			"talk_data":"",
 		}
 		for key in kwargs:

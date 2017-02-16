@@ -63,15 +63,16 @@ def add_friend(msg):
 
 @itchat.msg_register(TEXT, isGroupChat=True)
 def text_reply(msg):
+    pass
     # print msg
-    if msg['isAt']:
-        itchat.send(u'@%s\u2005I received: %s' % (msg['ActualNickName'], msg['Content']), msg['FromUserName'])
+    # if msg['isAt']:
+    #     itchat.send(u'@%s\u2005I received: %s' % (msg['ActualNickName'], msg['Content']), msg['FromUserName'])
 
 @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO], isGroupChat=True)
 def download_files_group(msg):
     pass
-    print msg["Type"], msg["MsgType"] , msg['Url']
-    msg['Text'](msg['FileName'])
+    # print msg["Type"], msg["MsgType"] , msg['Url']
+    # msg['Text'](msg['FileName'])
     # if msg['isAt']:
     #     msg['Text'](msg['FileName'])
     #     return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName'])
@@ -115,31 +116,62 @@ def text_reply(msg):
             i = i+1
             itchat.send('@img@%s' % str(i)+".gif" ,msg['FromUserName'])
 
+QR_WATER_SCAN = '0'
+QR_IS_SCAN = '1'
+QR_WATER_LOGIN = '2'
+QR_TIME_OUT = '3'
+QR_LOGIN = '4'
+QR_EXIT = '5'
+
+
+class QRCallback:
+    def __call__(self ,uuid = None, status = None ):
+        print "qr call back:",uuid,status
+        is_scan = QR_WATER_SCAN
+        if status == '201':
+            is_scan = QR_IS_SCAN
+        elif status == '200':
+            is_scan = QR_LOGIN
+        elif status != '408':
+            is_scan = QR_TIME_OUT
+        print str(uuid) + "user qr..."
+        url =  BASE_HOST + "bot/qr/status/"
+        params = { 'uuid':uuid ,'is_scan':is_scan}
+        s = requests.Session()
+        postQr = s.get(url, params=params)
+        print "itchat post qr callback success:", postQr
+
+
 #登陆成功，提示前台
 class loginCallBack:
-    uuid = None
-    def __init__(self,uuid):
-        self.uuid = uuid
-
-    def __call__(self , isLogin = None ,userName = None):
-        print str(uuid) + "user login..."
+    def __call__(self , uuid = None,userName = None , nickName = None):
+        print "login call back:",uuid,userName,nickName
+        # print str(uuid) + "user login..."
         url =  BASE_HOST + "bot/qr/status/"
-        params = { 'uuid':self.uuid ,'is_scan':isLogin,'user_name':userName}
+        params = { 'uuid':uuid ,'is_scan':QR_LOGIN,'user_name':userName}
         s = requests.Session()
         postQr = s.get(url, params=params)
         print "itchat post logincallback success:", postQr
         # Todo 登陆成功，同步 自动回复列表
+#退出
+class Exit():
+    def __call__(self , uuid = None):
+        print "exit call back:",uuid
+        # print str(uuid) + "user login..."
+        url =  BASE_HOST + "bot/qr/status/"
+        params = { 'uuid':uuid ,'is_scan':QR_EXIT}
+        s = requests.Session()
+        postQr = s.get(url, params=params)
+        print "itchat post logincallback success:", postQr
+
 
 #上传数据至服务器，并下载将要执行的操作
 class Receive():
-    uuid = None
-    def __init__(self,uuid):
-        self.uuid = uuid
-    def __call__(self):
+    def __call__(self,uuid = None):
         # print 'rece',rece
         # url =  BASE_HOST + "bot/update_reply/"
         url =  BASE_HOST + "bot/receive_callback/"
-        params = { 'uuid':self.uuid}
+        params = { 'uuid':uuid}
         s = requests.Session()
         postQr = s.get(url, params=params)
         # print "Receive:", postQr
@@ -160,13 +192,13 @@ class Receive():
         # print json.loads(postQr.text)
         # return json.loads(postQr.text)
 
-#退出
-class Exit():
-    uuid = None
-    def __init__(self,uuid):
-        self.uuid = uuid
-    def __call__(self):
-        print  str(uuid) + "user exit..."
+
+alive = True
+#测试专用线程
+def testThread ( receiveCallback = None):
+    while alive:
+        receiveCallback()
+        time.sleep(5)
 
 import sys
 if __name__ == '__main__':
@@ -177,13 +209,19 @@ if __name__ == '__main__':
     BASE_HOST = sys.argv[2]
     print BASE_HOST
     print 534543, uuid
-    loginCall = loginCallBack(uuid)
-    receive =  Receive(uuid)
-    exit = Exit(uuid)
-
-    itchat.auto_login(uuid=uuid,loginCallback = loginCall , receiveCallback = receive , exitCallback = exit ) #hack 做设置回调
+    qr = QRCallback()
+    loginCall = loginCallBack()
+    receive =  Receive()
+    exit = Exit()
+    itchat.auto_login(uuid=uuid,qrCallback = qr,loginCallback = loginCall , receiveCallback = receive , exitCallback = exit ) #hack 做设置回调
     itchat.run()
 
+    # uuid = '2'
+    # BASE_HOST =  'http://192.168.200.27:8000/'
+    # qr = QRCallback()
+    # qr(uuid,BASE_HOST)
+
+    # testThread( receiveCallback = receive)
 
 
 
