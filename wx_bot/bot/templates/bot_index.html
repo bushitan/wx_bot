@@ -153,19 +153,22 @@
             },
             success:function(data,textStatus){
 {#				console.log(data );#}
-                if (data.qr_status == "1"){
+                 if (data.qr_status == "0"){
+                     UserIsQR()
+                 }
+                if (data.qr_status == "4"){
                     console.log("1:",data.msg)
                     $("#qr").hide()
 //                    clearInterval(interval)
                 }
-                else if (data.qr_status == "2") {
-                    console.log("2:",data.msg)
-                    $("#qr").hide()
-                    $("#re_qr").show()
-                }
+{#                else if (data.qr_status == "2") {#}
+{#                    console.log("2:",data.msg)#}
+{#                    $("#qr").hide()#}
+{#                    $("#re_qr").show()#}
+{#                }#}
                 else{
 {#                    console.log("0:",data.msg)#}
-                    UserIsQR()
+
 //                    setTimeout(UserIsQR,500)
                 }
 //				window.location.href = data.url;
