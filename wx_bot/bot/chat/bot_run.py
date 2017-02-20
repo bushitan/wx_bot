@@ -7,7 +7,7 @@ import glob
 import random
 import requests
 import json
-
+import xml.dom.minidom
 #群消息
 # @itchat.msg_register(TEXT, isFriendChat=True, isGroupChat=True, isMpChat=True)
 # def general_reply(msg):
@@ -26,12 +26,20 @@ BASE_HOST =  'http://192.168.200.27:8000/'
     # itchat.send('@img@%s' % '170210-105741.gif',msg['FromUserName'])
     # itchat.send('%s: %s' % (msg['Type'], msg['Text']), msg['FromUserName'])
 
+def getEmojUrl(msg):
+    doc = xml.dom.minidom.parseString(msg)
+    for node in doc.getElementsByTagName("emoji"):
+        if node.getAttribute("cdnurl") != "":
+            return node.getAttribute("cdnurl")
+        # print (node, node.tagName, node.getAttribute("cdnurl"))
+
 @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO])
 def download_files(msg):
     print msg['MsgType']
+    print msg
     print msg['Content']
     # msg['Text'](msg['FileName'])
-    # url = {'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil')
+    url = {'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil')
     # msg = msg['FileName']
     # # print msg
     # print  url,msg
@@ -49,7 +57,12 @@ def download_files(msg):
     # print msg['MsgType']
     # print msg['Content']
     # print msg['MsgType'],msg['AppMsgType'],msg['FromUserName'],msg['ToUserName'],msg['Url'],msg['FileName'],msg['Content']
-    # itchat.send('@%s@%s' % (url,msg), msg['FromUserName'])
+    print msg['Url']
+    print msg['FileName']
+    # print msg['Content']
+    cdn_url = getEmojUrl(msg['Content'])
+    print "url:",cdn_url
+    itchat.send('%s' % (cdn_url), msg['FromUserName'])
     # itchat.send('%s' % ( msg['Content'] ), msg['FromUserName'])
     # return '@%s@%s' % (url,msg)
 
@@ -70,9 +83,9 @@ def text_reply(msg):
 
 @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO], isGroupChat=True)
 def download_files_group(msg):
-    pass
+    # pass
     # print msg["Type"], msg["MsgType"] , msg['Url']
-    # msg['Text'](msg['FileName'])
+    msg['Text'](msg['FileName'])
     # if msg['isAt']:
     #     msg['Text'](msg['FileName'])
     #     return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName'])
