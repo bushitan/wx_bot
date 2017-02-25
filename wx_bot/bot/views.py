@@ -29,14 +29,14 @@ class BotIndex(ListView):
     # init_file_name = 5
     def get(self, request, *args, **kwargs):
 
-        _uid = request.GET.get("uid", "")
-        uuid = userLib.Get_QRuuid() #获取uuid
-        userLib.AddUser(uid=_uid,uuid=uuid) #创建用户
-        self.uuid = uuid
-        self.qr_url = userLib.Get_QRurl( uuid =uuid) #获取二维码链接
-        _cmd = u'python '+ BOT_RUN_FILE_PATH + "  " + uuid + "  " + SETTING.BASE_HOST #运行脚本
-        # print _cmd
-        subprocess.Popen(_cmd, shell=True) #启动项目
+        # _uid = request.GET.get("uid", "")
+        # uuid = userLib.Get_QRuuid() #获取uuid
+        # userLib.AddUser(uid=_uid,uuid=uuid) #创建用户
+        # self.uuid = uuid
+        # self.qr_url = userLib.Get_QRurl( uuid =uuid) #获取二维码链接
+        # _cmd = u'python '+ BOT_RUN_FILE_PATH + "  " + uuid + "  " + SETTING.BASE_HOST #运行脚本
+        # # print _cmd
+        # subprocess.Popen(_cmd, shell=True) #启动项目
         return super(BotIndex, self).get(request, *args, **kwargs)
 
         # mydict = {"msg":u"用户未登录"}
@@ -71,14 +71,29 @@ class BotIndex(ListView):
             # pass
     def get_context_data(self, **kwargs):
         context =super(BotIndex, self).get_context_data(**kwargs)
-        context['qr_url'] = self.qr_url
-        context['uuid'] = self.uuid
+        # context['qr_url'] = self.qr_url
+        # context['uuid'] = self.uuid
         # context['auto_reply'] = self.auto_reply
         return context
     def get_queryset(self):
         pass
     def post(self, request, *args, **kwargs):
-        pass
+        _uid = request.GET.get("uid", "")
+        uuid = userLib.Get_QRuuid() #获取uuid
+        userLib.AddUser(uid=_uid,uuid=uuid) #创建用户
+        self.uuid = uuid
+        self.qr_url = userLib.Get_QRurl( uuid =uuid) #获取二维码链接
+        _cmd = u'python '+ BOT_RUN_FILE_PATH + "  " + uuid + "  " + SETTING.BASE_HOST #运行脚本
+        # print _cmd
+        subprocess.Popen(_cmd, shell=True) #启动项目
+        mydict = {
+            "qr_url":self.qr_url,
+            "uuid": self.uuid,
+        }
+        return HttpResponse(
+            json.dumps(mydict),
+            content_type="application/json"
+        )
 
 class UserLogin(ListView):
     template_name = 'bot_login_user.html'

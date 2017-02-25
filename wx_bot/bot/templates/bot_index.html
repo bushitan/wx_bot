@@ -12,7 +12,7 @@
 
 <body>
     <div id="qr" class="qr">
-        <img src="{{qr_url}}" />
+        <img id="img_qr" src="" />
     </div>
     <div id="re_qr" style="display: none">
         <input value="重新获取二维码"  />
@@ -65,13 +65,43 @@
 
 <script language="javascript" type="text/javascript">
 
-    QueryReply();
+    var uuid
+    var qr_url
+    GetQR()
+    function GetQR(){
+         $.ajax({
+            type:"POST",
+            url:"/bot/index/",
+            data:{
+				"uid":'2'
+			},
+            beforeSend:function(xhr){
+                xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+            },
+            success:function(data,textStatus){
+				console.log(data );
+                uuid = data.uuid
+                qr_url = data.qr_url
+                $("#img_qr").attr('src',qr_url)
+                QueryReply()
+                UserIsQR()
+            },
+            error:function(XMLHttpRequest, textStatus, errorThrown){
+                alert(XMLHttpRequest.responseText);
+
+            }
+
+        });
+    }
+
+
+{#    QueryReply();#}
     function QueryReply (){
         $.ajax({
             type:"GET",
             url:"/bot/reply/",
             data:{
-				"uuid":'{{uuid}}'
+				"uuid":uuid
 			},
             beforeSend:function(xhr){
                 xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
@@ -118,7 +148,7 @@
             type:"POST",
             url:"/bot/reply/",
             data:{
-				"uuid":'{{uuid}}',
+				"uuid":uuid,
                 "reply":_json
 			},
             beforeSend:function(xhr){
@@ -140,13 +170,13 @@
         $("#re_qr").hide()
     });
     var interval
-    UserIsQR()
+{#    UserIsQR()#}
     function UserIsQR(){
         $.ajax({
             type:"POST",
             url:"/bot/qr/status/",
             data:{
-				"uuid":'{{uuid}}'
+				"uuid":uuid
 			},
             beforeSend:function(xhr){
                 xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
