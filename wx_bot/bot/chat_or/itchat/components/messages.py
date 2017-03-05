@@ -28,12 +28,6 @@ def get_download_fn(core, url, msgId):
             'skey': core.loginInfo['skey'],}
         headers = { 'User-Agent' : config.USER_AGENT }
         r = core.s.get(url, params=params, stream=True, headers = headers)
-        print "download_fn:"
-        print core
-        print r
-        print url
-        print params
-        print headers
         tempStorage = io.BytesIO()
         for block in r.iter_content(1024):
             tempStorage.write(block)

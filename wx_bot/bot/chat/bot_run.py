@@ -8,6 +8,8 @@ import random
 import requests
 import json
 import xml.dom.minidom
+import ssl
+import httplib, urllib,urllib2
 #群消息
 # @itchat.msg_register(TEXT, isFriendChat=True, isGroupChat=True, isMpChat=True)
 # def general_reply(msg):
@@ -16,7 +18,7 @@ import xml.dom.minidom
 #私聊
 AUTO_REPLY = {}
 
-BASE_HOST =  'http://192.168.200.27:8000/'
+BASE_HOST =  'http://192.168.200.21:8000/'
 # rece = {"1":123321}
     # print msg['MsgType'],msg['AppMsgType'],msg['FromUserName'],msg['ToUserName'],msg['Url'],msg['FileName'],msg['Content']
     # itchat.send('%s: %s' % (msg['Type'], msg['Text']), msg['FromUserName'])
@@ -33,9 +35,11 @@ def getEmojUrl(msg):
             return node.getAttribute("cdnurl")
         # print (node, node.tagName, node.getAttribute("cdnurl"))
 
+
+
 @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO])
 def download_files(msg):
-    print msg['MsgType']
+    print msg['MsgType'],type(msg['MsgType'])
     print msg
     print msg['Content']
     # msg['Text'](msg['FileName'])
@@ -59,10 +63,35 @@ def download_files(msg):
     # print msg['MsgType'],msg['AppMsgType'],msg['FromUserName'],msg['ToUserName'],msg['Url'],msg['FileName'],msg['Content']
     print msg['Url']
     print msg['FileName']
-    # print msg['Content']
-    cdn_url = getEmojUrl(msg['Content'])
-    print "url:",cdn_url
-    itchat.send('%s' % (cdn_url), msg['FromUserName'])
+
+    #机器人返回表情地址
+
+    if msg['MsgType'] == "3" or msg['MsgType'] == 3:
+        print "in msg type 3"
+        # cdn_url = getEmojUrl(msg['Content'])
+        msg['Text'](msg['FileName'])
+        print "url:",msg
+        itchat.send('%s' % (msg), msg['FromUserName'])
+
+    # #机器人直传图片到今日斗图
+    if msg['MsgType'] == "47":
+        if msg['FromUserName'] == msg['ToUserName']:
+            cdn_url = getEmojUrl(msg['Content'])
+            # cdn_url = "http://images.csdn.net/20170112/1.jpg"
+            add_url = "https://www.12xiong.top/img/add/url"
+            params = {
+                'img_url': cdn_url,
+            }
+            params = urllib.urlencode(params)
+            context = ssl._create_unverified_context() #跳过SSL认证~~
+            print "%s?%s"%(add_url, params)
+            ret = urllib.urlopen("%s?%s"%(add_url, params),context = context)
+            # print ret
+            ret_read =  ret.read().decode("utf-8-sig")
+            print ret_read
+            ret_json = json.loads( ret_read)
+            # print ret_json
+            itchat.send('%s' % ("success"), msg['FromUserName'])
     # itchat.send('%s' % ( msg['Content'] ), msg['FromUserName'])
     # return '@%s@%s' % (url,msg)
 
@@ -187,7 +216,7 @@ class Receive():
         params = { 'uuid':uuid}
         s = requests.Session()
         postQr = s.get(url, params=params)
-        # print "Receive:", postQr
+        print "Receive:", postQr
         _dict = json.loads(postQr.text)
 
         #Todo 如果存在auto_reply，更新自动回复
