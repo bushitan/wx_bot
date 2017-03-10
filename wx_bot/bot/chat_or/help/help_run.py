@@ -9,15 +9,16 @@ import subprocess ,ssl,urllib,json
 
 @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO])
 def download_files(msg):
-    if msg['FromUserName'] == msg['ToUserName']:
-        msg['Text'](msg['FileName'])
-        print msg['FileName']
+    ##############要接收别人的信息
+    # if msg['FromUserName'] == msg['ToUserName']:
+    msg['Text'](msg['FileName'])
+    # print msg['FileName']
 
-        qiniu_path = ""
-        img_path,img_type = img_resize(msg['FileName'])
-        # img_path = msg['FileName']
-        img_upload(qiniu_path,img_type,img_path)
-        itchat.send('%s' % ("success"), msg['FromUserName'])
+    qiniu_path = ""
+    img_path,img_type = img_resize(msg['FileName'])
+    # img_path = msg['FileName']
+    img_upload(qiniu_path,img_type,img_path)
+    itchat.send('%s' % ("success"), msg['FromUserName'])
     # return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName'])
 
 # @itchat.msg_register(FRIENDS)
@@ -63,7 +64,7 @@ def Identity(img_url):
         }
 #img_local_path 不带后缀
 def img_resize(img_local_path):
-    print img_local_path
+    # print img_local_path
     # magick = Magick()
     info =  Identity(img_local_path)
     _img_type = info["type"].lower()
@@ -80,7 +81,8 @@ def img_resize(img_local_path):
         subprocess.check_output(_cmd, shell=True,stderr=subprocess.STDOUT)
     return  img_new_path,_img_type
 
-USER_CATEGORY = "2" #今日斗图目录
+UID = "7" #表情袋help的uid
+USER_CATEGORY = "29" #默认目录
 URL_HOST =  "https://www.12xiong.top/"
 URL_GET_SESSION  = URL_HOST + "user/session/"
 URL_TOKEN  = URL_HOST + "upload/token/"
@@ -88,10 +90,10 @@ URL_TOKEN  = URL_HOST + "upload/token/"
 def img_upload(qiniu_path,img_type,img_path):
     #获取token
     # key = qiniu_path + img_name + "." + img_type
-    print qiniu_path,img_type,img_path
+    # print qiniu_path,img_type,img_path
     #获取session
     params = {
-        'uid': "1",
+        'uid': UID,
     }
     params = urllib.urlencode(params)
     context = ssl._create_unverified_context() #跳过SSL认证~~
@@ -100,7 +102,7 @@ def img_upload(qiniu_path,img_type,img_path):
     # print ret_read
     ret_json = json.loads( ret_read)
     _session = ret_json["session"]
-    print _session
+    # print _session
 
     #获取token
     params = {
@@ -108,12 +110,12 @@ def img_upload(qiniu_path,img_type,img_path):
         'type':img_type,
         "category_id":USER_CATEGORY,
     }
-    print params
+    # print params
     params = urllib.urlencode(params)
     context = ssl._create_unverified_context() #跳过SSL认证~~
     ret = urllib.urlopen("%s?%s"%(URL_TOKEN, params),context = context)
     ret_read =  ret.read().decode("utf-8-sig")
-    print ret_read
+    # print ret_read
     ret_json = json.loads( ret_read)
 
     # print ret_json["msg"]
@@ -122,7 +124,7 @@ def img_upload(qiniu_path,img_type,img_path):
         token =  ret_json["token"]
         key = ret_json["key"]
         ret, info = qiniu.put_file(token,key, img_path)
-        print ret
+        # print ret
         if ret["status"] == "true":
             return True
     return False
