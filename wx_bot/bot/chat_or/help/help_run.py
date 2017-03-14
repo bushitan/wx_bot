@@ -21,6 +21,12 @@ def download_files(msg):
     itchat.send('%s' % ("success"), msg['FromUserName'])
     # return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName'])
 
+#下载斗图群文件
+@itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO], isGroupChat=True)
+def download_files_group(msg):
+    # pass
+    # print msg["Type"], msg["MsgType"] , msg['Url']
+    msg['Text'](msg['FileName'])
 # @itchat.msg_register(FRIENDS)
 # def add_friend(msg):
 #     itchat.add_friend(**msg['Text']) # 该操作会自动将新好友的消息录入，不需要重载通讯录
